@@ -36,11 +36,14 @@
 <h2>Scan des aliments</h2>
 <p>Le code-barres scanné est envoyé à <a href="https://world.openfoodfacts.org">Open Food Facts</a> (base libre, licence ODbL) pour obtenir le produit. Rien d'autre n'est envoyé : ni identifiant ni compte.</p>
 
+<h2>Calcul des macros avec Sol</h2>
+<p>Seulement si tu touches « Remplir avec Sol » dans une recette : le texte de tes ingrédients est envoyé au serveur de Sol (l'assistant de l'app YET, du même éditeur), hébergé par Cloudflare, puis au modèle d'IA qui répond (Cloudflare Workers AI). La demande porte un identifiant aléatoire de l'installation de l'app, sans lien avec ton compte, qui sert seulement à limiter le nombre de demandes par jour. Le serveur n'enregistre ni le texte ni la réponse.</p>
+
 <h2>Hébergement</h2>
 <p>Les données sont hébergées par <a href="https://supabase.com/privacy">Supabase</a> (base de données, connexion et photos), sous-traitant de l'éditeur. Les échanges sont chiffrés (HTTPS). La session est gardée dans le trousseau de l'iPhone.</p>
 
 <h2>Partage</h2>
-<p>L'éditeur ne vend, ne loue et ne partage aucune donnée personnelle, et n'affiche aucune publicité. Les seuls tiers qui traitent des données sont Apple (connexion), Supabase (hébergement) et Open Food Facts (codes-barres scannés).</p>
+<p>L'éditeur ne vend, ne loue et ne partage aucune donnée personnelle, et n'affiche aucune publicité. Les seuls tiers qui traitent des données sont Apple (connexion), Supabase (hébergement), Open Food Facts (codes-barres scannés) et Cloudflare (calcul des macros avec Sol, si tu l'utilises).</p>
 
 <h2>Combien de temps</h2>
 <p>Tant que ton compte existe. Quand tu le supprimes (Profil → Réglages → « Supprimer mon compte »), ton profil, tes séances, posts, recettes, commentaires, likes et photos sont effacés immédiatement ; les sauvegardes techniques de l'hébergeur disparaissent ensuite d'elles-mêmes. Les signalements que d'autres ont faits sur ton contenu peuvent être conservés le temps de les traiter.</p>
