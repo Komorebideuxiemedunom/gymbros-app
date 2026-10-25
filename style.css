@@ -1,12 +1,42 @@
-:root { --bg: #f5f5f7; --fg: #0e0e12; --muted: #6b6b76; --accent: #5b4bc4; --soft: #eeeafe; }
-@media (prefers-color-scheme: dark) { :root { --bg: #0b0b0e; --fg: #f4f4f6; --muted: #9a9aa6; --accent: #c9bfff; --soft: #2a2540; } }
-* { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
-main { max-width: 680px; margin: 0 auto; padding: 32px 16px 64px; }
-h1 { font-size: 2rem; margin: 0.2em 0; }
-h2 { font-size: 1.15rem; margin-top: 2em; }
-.meta, .back { color: var(--muted); font-size: 0.95rem; }
-a { color: var(--accent); }
-li { margin: 0.4em 0; }
-.logo { width: 112px; height: 112px; }
-.button { display: inline-block; background: var(--soft); color: var(--accent); padding: 12px 20px; border-radius: 16px; text-decoration: none; font-weight: 600; }
+/* Gymbros : le tableau des records de la salle. Big Shoulders Display pour les chiffres, Work Sans pour le texte, violet de l'app. Échelle de 8 px. */
+@font-face{font-family:"Big Shoulders";src:url(fonts/big-shoulders.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Work Sans";src:url(fonts/work-sans.woff2) format("woff2");font-weight:100 900;font-display:swap}
+:root{--bg:#F2F0EB;--fg:#121212;--muted:#4A4A4F;--accent:#5B4BC4;--craie:#FFFFFF;--trait:#D8D5CC;
+  --s1:8px;--s2:16px;--s3:24px;--s4:32px;--s6:48px;--s8:64px}
+@media (prefers-color-scheme:dark){:root{--bg:#101012;--fg:#F2F1EE;--muted:#B3B2BA;--accent:#C9BFFF;--craie:#1A1A1E;--trait:#2C2C31}}
+*{box-sizing:border-box}html{background:var(--bg)}
+body{margin:0;color:var(--fg);font:400 18px/1.6 "Work Sans",system-ui,sans-serif}
+main{max-width:1040px;margin:0 auto;padding:var(--s4) var(--s3) var(--s8)}
+a{color:var(--accent);text-underline-offset:3px}a:hover,a:focus-visible{color:var(--fg);text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+p,li{color:var(--muted);max-width:64ch}strong{color:var(--fg);font-weight:600}
+.marque{display:inline-flex;align-items:center;gap:12px;color:var(--fg);text-decoration:none;font:800 22px "Big Shoulders",sans-serif;text-transform:uppercase;letter-spacing:.04em;margin-bottom:var(--s8)}
+.marque img{width:40px;height:40px}
+.back{font-size:15px;margin:0 0 var(--s3)}.meta{color:var(--muted);font-size:15px}
+h1,h2{font-family:"Big Shoulders",sans-serif;text-transform:uppercase}
+h1{font-weight:900;font-size:clamp(44px,7vw,88px);line-height:.92;letter-spacing:.005em;margin:0 0 var(--s3);max-width:18ch}
+h1.geant{font-size:clamp(88px,18vw,232px);line-height:.8}
+h2{font-weight:800;font-size:clamp(26px,3vw,36px);line-height:1;letter-spacing:.02em;margin:var(--s6) 0 var(--s2)}
+li{margin:var(--s1) 0}
+.chapeau{font-size:clamp(20px,2.2vw,26px);line-height:1.4;color:var(--fg);max-width:34ch;margin:0}
+
+/* Le tableau des records : la signature de Gymbros */
+.records{background:var(--craie);border:3px solid var(--fg);margin:var(--s6) 0 var(--s8);padding:var(--s3) var(--s4)}
+.records header{display:flex;justify-content:space-between;align-items:baseline;border-bottom:3px solid var(--fg);padding-bottom:var(--s1);font:800 20px "Big Shoulders",sans-serif;text-transform:uppercase;letter-spacing:.06em}
+.records header span{color:var(--muted);font-size:16px}
+.records table{width:100%;border-collapse:collapse}
+.records td{border-bottom:1px solid var(--trait);padding:var(--s2) 0;vertical-align:baseline}
+.records tr:last-child td{border-bottom:0}
+.records td:first-child{font-size:18px;color:var(--fg);font-weight:500}
+.records td:nth-child(2){color:var(--muted);font-size:15px}
+.records td:last-child{text-align:right;font:900 clamp(40px,5vw,64px)/1 "Big Shoulders",sans-serif;color:var(--fg)}
+.records td:last-child small{font-size:.4em;font-weight:700;margin-left:4px;color:var(--accent)}
+
+.button{display:inline-block;background:var(--fg);color:var(--bg);padding:14px 24px;text-decoration:none;font:800 20px "Big Shoulders",sans-serif;text-transform:uppercase;letter-spacing:.06em}
+.button:hover,.button:focus-visible{background:var(--accent);color:var(--bg)}
+.aide{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:var(--s3);border-top:3px solid var(--fg);border-bottom:3px solid var(--fg);padding:var(--s4) 0;margin:var(--s6) 0}
+.aide p{margin:0}
+.faq{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:var(--s1) var(--s6);border-top:1px solid var(--trait);padding:var(--s3) 0}
+.faq h3{margin:0;font-size:19px;line-height:1.3;font-weight:600}.faq p{margin:0}
+@media (max-width:720px){main{padding:var(--s3) var(--s2) var(--s6)}.marque{margin-bottom:var(--s6)}.faq{grid-template-columns:1fr}.records{padding:var(--s2)}.records td:nth-child(2){display:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
