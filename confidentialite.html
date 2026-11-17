@@ -11,7 +11,7 @@
 <main>
 <a class="marque" href="index.html"><img src="logo.png" alt="">Gymbros</a>
 <h1>Politique de confidentialité</h1>
-<p class="meta">Application Gymbros · en vigueur le 1er octobre 2026</p>
+<p class="meta">Application Gymbros · en vigueur le 17 novembre 2026</p>
 
 <h2>En bref</h2>
 <p>Gymbros garde ce qu'il faut pour que tes potes voient ce que tu partages, et rien de plus. Pas de publicité, pas de pisteur, aucune donnée vendue. Tes mesures et photos de progrès sont privées par défaut. Tu peux tout effacer depuis l'app.</p>
@@ -24,6 +24,7 @@
 <li><strong>Tes liens</strong> : qui tu suis, qui te suit, qui tu as bloqué, tes signalements.</li>
 <li><strong>Tes mesures et photos de progrès</strong> (si tu en ajoutes) : privées par défaut, visibles par d'autres seulement si tu le choisis.</li>
 </ul>
+<p><strong>Restent uniquement sur ton iPhone</strong>, jamais sur nos serveurs : ton journal de repas, tes objectifs (calories, protéines, glucides, lipides), ta routine (repas et séances prévus), ton suivi d'eau et tes réglages de rappels. Ils disparaissent si tu supprimes l'app.</p>
 
 <h2>Qui voit quoi</h2>
 <p>Chaque publication est <strong>Public</strong>, <strong>Potes</strong> (personnes que tu suis et qui te suivent) ou <strong>Moi seul</strong>. Ces règles sont appliquées par le serveur lui-même : une personne qui n'y a pas droit ne peut pas lire le contenu, même en contournant l'app. Ton pseudo, ton prénom et ta photo de profil sont visibles par les membres connectés, pour qu'ils puissent te trouver. Une personne bloquée ne voit plus ton contenu.</p>
@@ -32,13 +33,18 @@
 <ul>
 <li><strong>Appareil photo</strong> : pour scanner le code-barres d'un aliment et prendre des photos. Le flux de la caméra reste sur l'iPhone.</li>
 <li><strong>Photos</strong> : seules celles que tu choisis sont envoyées, compressées.</li>
+<li><strong>Calendrier</strong> : seulement si tu touches « Lier mon Calendrier Apple ». Gymbros ajoute tes repas et tes séances dans un calendrier « Gymbros » et affiche tes autres rendez-vous à côté de ta routine. Tout se passe sur l'iPhone : tes événements ne sont envoyés nulle part.</li>
+<li><strong>Notifications</strong> : seulement si tu actives les rappels « Bois de l'eau ». Ce sont des rappels programmés sur l'iPhone, sans serveur.</li>
 </ul>
+
+<h2>Importer une routine</h2>
+<p>Quand tu colles un lien Google Sheets ou Excel, ton iPhone télécharge le fichier directement chez Google ou Microsoft, comme le ferait ton navigateur, puis le lit sur place. Un fichier ou un PDF que tu choisis est lu sur l'iPhone, sans être envoyé.</p>
 
 <h2>Scan des aliments</h2>
 <p>Le code-barres scanné est envoyé à <a href="https://world.openfoodfacts.org">Open Food Facts</a> (base libre, licence ODbL) pour obtenir le produit. Rien d'autre n'est envoyé : ni identifiant ni compte.</p>
 
 <h2>Calcul des macros avec Sol</h2>
-<p>Seulement si tu touches « Remplir avec Sol » dans une recette : le texte de tes ingrédients est envoyé au serveur de Sol (l'assistant de l'app YET, du même éditeur), hébergé par Cloudflare, puis au modèle d'IA qui répond (Cloudflare Workers AI). La demande porte un identifiant aléatoire de l'installation de l'app, sans lien avec ton compte, qui sert seulement à limiter le nombre de demandes par jour. Le serveur n'enregistre ni le texte ni la réponse.</p>
+<p>Seulement si tu le demandes (« Remplir avec Sol » dans une recette, « Calculer avec Sol » ou « Demander à Sol » pendant un import de routine) : le texte de tes ingrédients, ou le contenu du tableau à relire, est envoyé au serveur de Sol (l'assistant de l'app YET, du même éditeur), hébergé par Cloudflare, puis au modèle d'IA qui répond (Cloudflare Workers AI). La demande porte un identifiant aléatoire de l'installation de l'app, sans lien avec ton compte, qui sert seulement à limiter le nombre de demandes par jour. Le serveur n'enregistre ni le texte ni la réponse.</p>
 
 <h2>Hébergement</h2>
 <p>Les données sont hébergées par <a href="https://supabase.com/privacy">Supabase</a> (base de données, connexion et photos), sous-traitant de l'éditeur. Les échanges sont chiffrés (HTTPS). La session est gardée dans le trousseau de l'iPhone.</p>
