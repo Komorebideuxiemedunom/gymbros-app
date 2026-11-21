@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://komorebideuxiemedunom.github.io/gymbros-app/sitemap.xml
